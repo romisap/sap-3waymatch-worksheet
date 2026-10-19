@@ -14,6 +14,7 @@ Sequel to [invoice-e4b-finetuning-worksheet](https://github.com/romisap/invoice-
 
 - `dataset/make_match3way_dataset.py` generates 100 cases: 4 formats, 6 edge types (clean 50%, qty_mismatch / price_mismatch / missing_grn / missing_po / partial delivery at 10% each)
 - 80 training pairs, 20 held-out test cases — every edge type appears in the test set
+- `match3way_golden_v1_100.jsonl` — the full 100-case golden set (all formats + edge types, reproducible from seed 42)
 
 ## Results (20 held-out cases)
 
@@ -32,12 +33,12 @@ Training: 80 pairs, QLoRA r16 a16 (q/k/v/o/gate/up/down), 3 epochs, **15 optimiz
 
 1. Dataset: https://www.kaggle.com/datasets/romibagga/match3way-dataset
 2. Training kernel: https://www.kaggle.com/code/romibagga/match3way-e4b-train — fork it, enable GPU (T4), Run All. The kernel trains AND evaluates the 20 held-out cases in-kernel.
-3. Or regenerate the dataset locally: `python dataset/make_match3way_dataset.py` (seed 42)
+3. The full dataset is also in this repo (`dataset/`) — 100 golden cases + 80/20 train/test split `python dataset/make_match3way_dataset.py` (seed 42)
 
 ## Files
 
 ```
-dataset/  make_match3way_dataset.py, match3way_train_v1_80.jsonl, match3way_test_v1_20.jsonl
+dataset/  make_match3way_dataset.py, match3way_golden_v1_100.jsonl, match3way_train_v1_80.jsonl, match3way_test_v1_20.jsonl
 eval/    eval_base_match3.py (llama.cpp baseline harness), eval_base_results.json
 kaggle/  train_match3way.py (unsloth QLoRA kernel), kernel-metadata.json
 results/ eval_finetuned_results.json (20 held-out cases, per-field detail)
@@ -46,3 +47,5 @@ results/ eval_finetuned_results.json (20 held-out cases, per-field detail)
 ## License
 
 MIT
+
+4. Or regenerate the dataset locally:
