@@ -1,0 +1,15 @@
+{
+  "id": "romibagga/match3way-e4b-train",
+  "title": "match3way-e4b-train",
+  "code_file": "train_match3way.py",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "romibagga/match3way-dataset"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "language": "python"
+}
