@@ -1,0 +1,688 @@
+{
+  "summary": {
+    "model": "gemma-4-E4B-it + LoRA r16 (fine-tuned on 80 3-way-match pairs)",
+    "total": 20,
+    "json_valid": 20,
+    "all_fields_exact": 20,
+    "invented_po_when_missing": 0,
+    "invented_grn_when_missing": 0,
+    "verdict_accuracy": 1.0,
+    "field_accuracy": {
+      "vendor": 1.0,
+      "po_number": 1.0,
+      "grn_number": 1.0,
+      "invoice_number": 1.0,
+      "invoice_date": 1.0,
+      "currency": 1.0,
+      "total_amount": 1.0,
+      "material": 1.0,
+      "po_qty": 1.0,
+      "grn_qty": 1.0,
+      "inv_qty": 1.0,
+      "po_unit_price": 1.0,
+      "inv_unit_price": 1.0
+    }
+  },
+  "cases": [
+    {
+      "case": 1,
+      "edges": "qty_mismatch",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Gupta Enterprises\",\n  \"po_number\": \"4500191161\",\n  \"grn_number\": \"5000719176\",\n  \"invoice_number\": \"INV-2026-81482\",\n  \"invoice_date\": \"2026-07-02\",\n  \"currency\": \"AED\",\n  \"items\": [\n  ",
+      "ok_fields": 13,
+      "total_fields": 13,
+      "gold": {
+        "vendor": "Gupta Enterprises",
+        "po_number": "4500191161",
+        "grn_number": "5000719176",
+        "invoice_number": "INV-2026-81482",
+        "invoice_date": "2026-07-02",
+        "currency": "AED",
+        "items": [
+          {
+            "material": "ROUTER-AX6",
+            "po_qty": 9,
+            "grn_qty": 9,
+            "inv_qty": 6,
+            "po_unit_price": 62100.0,
+            "inv_unit_price": 62100.0
+          }
+        ],
+        "total_amount": 372600.0
+      }
+    },
+    {
+      "case": 9,
+      "edges": "partial",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Sundaram Textiles Ltd\",\n  \"po_number\": \"4500380746\",\n  \"grn_number\": \"5000169403\",\n  \"invoice_number\": \"INV-2026-62581\",\n  \"invoice_date\": \"2026-04-19\",\n  \"currency\": \"INR\",\n  \"items\": ",
+      "ok_fields": 19,
+      "total_fields": 19,
+      "gold": {
+        "vendor": "Sundaram Textiles Ltd",
+        "po_number": "4500380746",
+        "grn_number": "5000169403",
+        "invoice_number": "INV-2026-62581",
+        "invoice_date": "2026-04-19",
+        "currency": "INR",
+        "items": [
+          {
+            "material": "KEYBOARD-WL",
+            "po_qty": 8,
+            "grn_qty": 5,
+            "inv_qty": 5,
+            "po_unit_price": 15100.0,
+            "inv_unit_price": 15100.0
+          },
+          {
+            "material": "DESK-L120",
+            "po_qty": 3,
+            "grn_qty": 1,
+            "inv_qty": 1,
+            "po_unit_price": 25750.0,
+            "inv_unit_price": 25750.0
+          }
+        ],
+        "total_amount": 101250.0
+      }
+    },
+    {
+      "case": 10,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Kapoor Imports\",\n  \"po_number\": \"4500549245\",\n  \"grn_number\": \"5000711878\",\n  \"invoice_number\": \"INV-2026-86622\",\n  \"invoice_date\": \"2026-07-12\",\n  \"currency\": \"AED\",\n  \"items\": [\n    {",
+      "ok_fields": 25,
+      "total_fields": 25,
+      "gold": {
+        "vendor": "Kapoor Imports",
+        "po_number": "4500549245",
+        "grn_number": "5000711878",
+        "invoice_number": "INV-2026-86622",
+        "invoice_date": "2026-07-12",
+        "currency": "AED",
+        "items": [
+          {
+            "material": "MOUSE-USB",
+            "po_qty": 14,
+            "grn_qty": 14,
+            "inv_qty": 14,
+            "po_unit_price": 11700.0,
+            "inv_unit_price": 11700.0
+          },
+          {
+            "material": "PRINTER-A4L",
+            "po_qty": 3,
+            "grn_qty": 3,
+            "inv_qty": 3,
+            "po_unit_price": 64750.0,
+            "inv_unit_price": 64750.0
+          },
+          {
+            "material": "LAPTOP-14I5",
+            "po_qty": 3,
+            "grn_qty": 3,
+            "inv_qty": 3,
+            "po_unit_price": 81600.0,
+            "inv_unit_price": 81600.0
+          }
+        ],
+        "total_amount": 602850.0
+      }
+    },
+    {
+      "case": 15,
+      "edges": "missing_grn",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Sharma Traders Pvt Ltd\",\n  \"po_number\": \"4500189814\",\n  \"grn_number\": null,\n  \"invoice_number\": \"INV-2026-20322\",\n  \"invoice_date\": \"2026-08-27\",\n  \"currency\": \"INR\",\n  \"items\": [\n    {",
+      "ok_fields": 13,
+      "total_fields": 13,
+      "gold": {
+        "vendor": "Sharma Traders Pvt Ltd",
+        "po_number": "4500189814",
+        "grn_number": null,
+        "invoice_number": "INV-2026-20322",
+        "invoice_date": "2026-08-27",
+        "currency": "INR",
+        "items": [
+          {
+            "material": "MONITOR-24F",
+            "po_qty": 11,
+            "grn_qty": null,
+            "inv_qty": 11,
+            "po_unit_price": 49150.0,
+            "inv_unit_price": 49150.0
+          }
+        ],
+        "total_amount": 540650.0
+      }
+    },
+    {
+      "case": 37,
+      "edges": "missing_po",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Nanda Electricals\",\n  \"po_number\": null,\n  \"grn_number\": null,\n  \"invoice_number\": \"INV-2026-13248\",\n  \"invoice_date\": \"2026-06-26\",\n  \"currency\": \"AED\",\n  \"items\": [\n    {\n      \"mater",
+      "ok_fields": 19,
+      "total_fields": 19,
+      "gold": {
+        "vendor": "Nanda Electricals",
+        "po_number": null,
+        "grn_number": null,
+        "invoice_number": "INV-2026-13248",
+        "invoice_date": "2026-06-26",
+        "currency": "AED",
+        "items": [
+          {
+            "material": "MONITOR-24F",
+            "po_qty": null,
+            "grn_qty": null,
+            "inv_qty": 7,
+            "po_unit_price": null,
+            "inv_unit_price": 89800.0
+          },
+          {
+            "material": "PRINTER-A4L",
+            "po_qty": null,
+            "grn_qty": null,
+            "inv_qty": 1,
+            "po_unit_price": null,
+            "inv_unit_price": 88400.0
+          }
+        ],
+        "total_amount": 717000.0
+      }
+    },
+    {
+      "case": 41,
+      "edges": "qty_mismatch",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Reddy Agro Supplies\",\n  \"po_number\": \"4500101773\",\n  \"grn_number\": \"5000645175\",\n  \"invoice_number\": \"INV-2026-67154\",\n  \"invoice_date\": \"2026-09-22\",\n  \"currency\": \"EUR\",\n  \"items\": [\n",
+      "ok_fields": 19,
+      "total_fields": 19,
+      "gold": {
+        "vendor": "Reddy Agro Supplies",
+        "po_number": "4500101773",
+        "grn_number": "5000645175",
+        "invoice_number": "INV-2026-67154",
+        "invoice_date": "2026-09-22",
+        "currency": "EUR",
+        "items": [
+          {
+            "material": "PRINTER-A4L",
+            "po_qty": 15,
+            "grn_qty": 15,
+            "inv_qty": 19,
+            "po_unit_price": 34300.0,
+            "inv_unit_price": 34300.0
+          },
+          {
+            "material": "DESK-L120",
+            "po_qty": 6,
+            "grn_qty": 6,
+            "inv_qty": 3,
+            "po_unit_price": 68400.0,
+            "inv_unit_price": 68400.0
+          }
+        ],
+        "total_amount": 856900.0
+      }
+    },
+    {
+      "case": 42,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Chawla Chemicals Pvt Ltd\",\n  \"po_number\": \"4500631756\",\n  \"grn_number\": \"5000424308\",\n  \"invoice_number\": \"INV-2026-49363\",\n  \"invoice_date\": \"2026-11-14\",\n  \"currency\": \"INR\",\n  \"items",
+      "ok_fields": 19,
+      "total_fields": 19,
+      "gold": {
+        "vendor": "Chawla Chemicals Pvt Ltd",
+        "po_number": "4500631756",
+        "grn_number": "5000424308",
+        "invoice_number": "INV-2026-49363",
+        "invoice_date": "2026-11-14",
+        "currency": "INR",
+        "items": [
+          {
+            "material": "CABLE-HDMI2",
+            "po_qty": 4,
+            "grn_qty": 4,
+            "inv_qty": 4,
+            "po_unit_price": 43550.0,
+            "inv_unit_price": 43550.0
+          },
+          {
+            "material": "MONITOR-24F",
+            "po_qty": 11,
+            "grn_qty": 11,
+            "inv_qty": 11,
+            "po_unit_price": 39300.0,
+            "inv_unit_price": 39300.0
+          }
+        ],
+        "total_amount": 606500.0
+      }
+    },
+    {
+      "case": 45,
+      "edges": "missing_grn",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Sharma Traders Pvt Ltd\",\n  \"po_number\": \"4500254511\",\n  \"grn_number\": null,\n  \"invoice_number\": \"INV-2026-36100\",\n  \"invoice_date\": \"2026-01-08\",\n  \"currency\": \"INR\",\n  \"items\": [\n    {",
+      "ok_fields": 13,
+      "total_fields": 13,
+      "gold": {
+        "vendor": "Sharma Traders Pvt Ltd",
+        "po_number": "4500254511",
+        "grn_number": null,
+        "invoice_number": "INV-2026-36100",
+        "invoice_date": "2026-01-08",
+        "currency": "INR",
+        "items": [
+          {
+            "material": "MOUSE-USB",
+            "po_qty": 7,
+            "grn_qty": null,
+            "inv_qty": 7,
+            "po_unit_price": 64950.0,
+            "inv_unit_price": 64950.0
+          }
+        ],
+        "total_amount": 454650.0
+      }
+    },
+    {
+      "case": 48,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Mehta and Sons\",\n  \"po_number\": \"4500684482\",\n  \"grn_number\": \"5000361303\",\n  \"invoice_number\": \"INV-2026-16582\",\n  \"invoice_date\": \"2026-02-15\",\n  \"currency\": \"INR\",\n  \"items\": [\n    {",
+      "ok_fields": 25,
+      "total_fields": 25,
+      "gold": {
+        "vendor": "Mehta and Sons",
+        "po_number": "4500684482",
+        "grn_number": "5000361303",
+        "invoice_number": "INV-2026-16582",
+        "invoice_date": "2026-02-15",
+        "currency": "INR",
+        "items": [
+          {
+            "material": "CABLE-HDMI2",
+            "po_qty": 13,
+            "grn_qty": 13,
+            "inv_qty": 13,
+            "po_unit_price": 45800.0,
+            "inv_unit_price": 45800.0
+          },
+          {
+            "material": "CHAIR-ERGO",
+            "po_qty": 10,
+            "grn_qty": 10,
+            "inv_qty": 10,
+            "po_unit_price": 83950.0,
+            "inv_unit_price": 83950.0
+          },
+          {
+            "material": "RAM-16GB",
+            "po_qty": 12,
+            "grn_qty": 12,
+            "inv_qty": 12,
+            "po_unit_price": 52150.0,
+            "inv_unit_price": 52150.0
+          }
+        ],
+        "total_amount": 2060700.0
+      }
+    },
+    {
+      "case": 50,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Deepak Materials Pvt Ltd\",\n  \"po_number\": \"4500181247\",\n  \"grn_number\": \"5000848206\",\n  \"invoice_number\": \"INV-2026-67654\",\n  \"invoice_date\": \"2026-05-08\",\n  \"currency\": \"EUR\",\n  \"items",
+      "ok_fields": 19,
+      "total_fields": 19,
+      "gold": {
+        "vendor": "Deepak Materials Pvt Ltd",
+        "po_number": "4500181247",
+        "grn_number": "5000848206",
+        "invoice_number": "INV-2026-67654",
+        "invoice_date": "2026-05-08",
+        "currency": "EUR",
+        "items": [
+          {
+            "material": "CABLE-HDMI2",
+            "po_qty": 3,
+            "grn_qty": 3,
+            "inv_qty": 3,
+            "po_unit_price": 15900.0,
+            "inv_unit_price": 15900.0
+          },
+          {
+            "material": "PRINTER-A4L",
+            "po_qty": 4,
+            "grn_qty": 4,
+            "inv_qty": 4,
+            "po_unit_price": 39700.0,
+            "inv_unit_price": 39700.0
+          }
+        ],
+        "total_amount": 206500.0
+      }
+    },
+    {
+      "case": 55,
+      "edges": "missing_grn",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Kapoor Imports\",\n  \"po_number\": \"4500576786\",\n  \"grn_number\": null,\n  \"invoice_number\": \"INV-2026-37742\",\n  \"invoice_date\": \"2026-06-25\",\n  \"currency\": \"AED\",\n  \"items\": [\n    {\n      \"",
+      "ok_fields": 19,
+      "total_fields": 19,
+      "gold": {
+        "vendor": "Kapoor Imports",
+        "po_number": "4500576786",
+        "grn_number": null,
+        "invoice_number": "INV-2026-37742",
+        "invoice_date": "2026-06-25",
+        "currency": "AED",
+        "items": [
+          {
+            "material": "SSD-1TB",
+            "po_qty": 8,
+            "grn_qty": null,
+            "inv_qty": 8,
+            "po_unit_price": 2450.0,
+            "inv_unit_price": 2450.0
+          },
+          {
+            "material": "PRINTER-A4L",
+            "po_qty": 12,
+            "grn_qty": null,
+            "inv_qty": 12,
+            "po_unit_price": 55700.0,
+            "inv_unit_price": 55700.0
+          }
+        ],
+        "total_amount": 688000.0
+      }
+    },
+    {
+      "case": 56,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Reddy Agro Supplies\",\n  \"po_number\": \"4500466960\",\n  \"grn_number\": \"5000335113\",\n  \"invoice_number\": \"INV-2026-16826\",\n  \"invoice_date\": \"2026-11-03\",\n  \"currency\": \"EUR\",\n  \"items\": [\n",
+      "ok_fields": 13,
+      "total_fields": 13,
+      "gold": {
+        "vendor": "Reddy Agro Supplies",
+        "po_number": "4500466960",
+        "grn_number": "5000335113",
+        "invoice_number": "INV-2026-16826",
+        "invoice_date": "2026-11-03",
+        "currency": "EUR",
+        "items": [
+          {
+            "material": "ROUTER-AX6",
+            "po_qty": 4,
+            "grn_qty": 4,
+            "inv_qty": 4,
+            "po_unit_price": 86400.0,
+            "inv_unit_price": 86400.0
+          }
+        ],
+        "total_amount": 345600.0
+      }
+    },
+    {
+      "case": 65,
+      "edges": "missing_grn",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Deepak Materials Pvt Ltd\",\n  \"po_number\": \"4500777278\",\n  \"grn_number\": null,\n  \"invoice_number\": \"INV-2026-72402\",\n  \"invoice_date\": \"2026-08-15\",\n  \"currency\": \"EUR\",\n  \"items\": [\n   ",
+      "ok_fields": 19,
+      "total_fields": 19,
+      "gold": {
+        "vendor": "Deepak Materials Pvt Ltd",
+        "po_number": "4500777278",
+        "grn_number": null,
+        "invoice_number": "INV-2026-72402",
+        "invoice_date": "2026-08-15",
+        "currency": "EUR",
+        "items": [
+          {
+            "material": "ROUTER-AX6",
+            "po_qty": 12,
+            "grn_qty": null,
+            "inv_qty": 12,
+            "po_unit_price": 25400.0,
+            "inv_unit_price": 25400.0
+          },
+          {
+            "material": "KEYBOARD-WL",
+            "po_qty": 5,
+            "grn_qty": null,
+            "inv_qty": 5,
+            "po_unit_price": 68450.0,
+            "inv_unit_price": 68450.0
+          }
+        ],
+        "total_amount": 647050.0
+      }
+    },
+    {
+      "case": 70,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Kapoor Imports\",\n  \"po_number\": \"4500112861\",\n  \"grn_number\": \"5000701949\",\n  \"invoice_number\": \"INV-2026-23446\",\n  \"invoice_date\": \"2026-05-16\",\n  \"currency\": \"AED\",\n  \"items\": [\n    {",
+      "ok_fields": 19,
+      "total_fields": 19,
+      "gold": {
+        "vendor": "Kapoor Imports",
+        "po_number": "4500112861",
+        "grn_number": "5000701949",
+        "invoice_number": "INV-2026-23446",
+        "invoice_date": "2026-05-16",
+        "currency": "AED",
+        "items": [
+          {
+            "material": "MONITOR-24F",
+            "po_qty": 5,
+            "grn_qty": 5,
+            "inv_qty": 5,
+            "po_unit_price": 88700.0,
+            "inv_unit_price": 88700.0
+          },
+          {
+            "material": "LAPTOP-14I5",
+            "po_qty": 8,
+            "grn_qty": 8,
+            "inv_qty": 8,
+            "po_unit_price": 12150.0,
+            "inv_unit_price": 12150.0
+          }
+        ],
+        "total_amount": 540700.0
+      }
+    },
+    {
+      "case": 72,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Chawla Chemicals Pvt Ltd\",\n  \"po_number\": \"4500360247\",\n  \"grn_number\": \"5000224205\",\n  \"invoice_number\": \"INV-2026-21164\",\n  \"invoice_date\": \"2026-09-25\",\n  \"currency\": \"INR\",\n  \"items",
+      "ok_fields": 25,
+      "total_fields": 25,
+      "gold": {
+        "vendor": "Chawla Chemicals Pvt Ltd",
+        "po_number": "4500360247",
+        "grn_number": "5000224205",
+        "invoice_number": "INV-2026-21164",
+        "invoice_date": "2026-09-25",
+        "currency": "INR",
+        "items": [
+          {
+            "material": "CHAIR-ERGO",
+            "po_qty": 7,
+            "grn_qty": 7,
+            "inv_qty": 7,
+            "po_unit_price": 46600.0,
+            "inv_unit_price": 46600.0
+          },
+          {
+            "material": "ROUTER-AX6",
+            "po_qty": 15,
+            "grn_qty": 15,
+            "inv_qty": 15,
+            "po_unit_price": 45800.0,
+            "inv_unit_price": 45800.0
+          },
+          {
+            "material": "CABLE-HDMI2",
+            "po_qty": 5,
+            "grn_qty": 5,
+            "inv_qty": 5,
+            "po_unit_price": 88550.0,
+            "inv_unit_price": 88550.0
+          }
+        ],
+        "total_amount": 1455950.0
+      }
+    },
+    {
+      "case": 73,
+      "edges": "price_mismatch",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Iyer Logistics Solutions\",\n  \"po_number\": \"4500549660\",\n  \"grn_number\": \"5000420214\",\n  \"invoice_number\": \"INV-2026-87139\",\n  \"invoice_date\": \"2026-10-20\",\n  \"currency\": \"AED\",\n  \"items",
+      "ok_fields": 13,
+      "total_fields": 13,
+      "gold": {
+        "vendor": "Iyer Logistics Solutions",
+        "po_number": "4500549660",
+        "grn_number": "5000420214",
+        "invoice_number": "INV-2026-87139",
+        "invoice_date": "2026-10-20",
+        "currency": "AED",
+        "items": [
+          {
+            "material": "ROUTER-AX6",
+            "po_qty": 11,
+            "grn_qty": 11,
+            "inv_qty": 11,
+            "po_unit_price": 22100.0,
+            "inv_unit_price": 23100.0
+          }
+        ],
+        "total_amount": 254100.0
+      }
+    },
+    {
+      "case": 76,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Gupta Enterprises\",\n  \"po_number\": \"4500718439\",\n  \"grn_number\": \"5000793300\",\n  \"invoice_number\": \"INV-2026-91927\",\n  \"invoice_date\": \"2026-04-14\",\n  \"currency\": \"AED\",\n  \"items\": [\n  ",
+      "ok_fields": 13,
+      "total_fields": 13,
+      "gold": {
+        "vendor": "Gupta Enterprises",
+        "po_number": "4500718439",
+        "grn_number": "5000793300",
+        "invoice_number": "INV-2026-91927",
+        "invoice_date": "2026-04-14",
+        "currency": "AED",
+        "items": [
+          {
+            "material": "DESK-L120",
+            "po_qty": 3,
+            "grn_qty": 3,
+            "inv_qty": 3,
+            "po_unit_price": 27700.0,
+            "inv_unit_price": 27700.0
+          }
+        ],
+        "total_amount": 83100.0
+      }
+    },
+    {
+      "case": 78,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Mehta and Sons\",\n  \"po_number\": \"4500666211\",\n  \"grn_number\": \"5000617781\",\n  \"invoice_number\": \"INV-2026-75597\",\n  \"invoice_date\": \"2026-08-03\",\n  \"currency\": \"INR\",\n  \"items\": [\n    {",
+      "ok_fields": 19,
+      "total_fields": 19,
+      "gold": {
+        "vendor": "Mehta and Sons",
+        "po_number": "4500666211",
+        "grn_number": "5000617781",
+        "invoice_number": "INV-2026-75597",
+        "invoice_date": "2026-08-03",
+        "currency": "INR",
+        "items": [
+          {
+            "material": "UPS-1KVA",
+            "po_qty": 10,
+            "grn_qty": 10,
+            "inv_qty": 10,
+            "po_unit_price": 26100.0,
+            "inv_unit_price": 26100.0
+          },
+          {
+            "material": "RAM-16GB",
+            "po_qty": 1,
+            "grn_qty": 1,
+            "inv_qty": 1,
+            "po_unit_price": 9850.0,
+            "inv_unit_price": 9850.0
+          }
+        ],
+        "total_amount": 270850.0
+      }
+    },
+    {
+      "case": 91,
+      "edges": "qty_mismatch",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Gupta Enterprises\",\n  \"po_number\": \"4500178463\",\n  \"grn_number\": \"5000592296\",\n  \"invoice_number\": \"INV-2026-30232\",\n  \"invoice_date\": \"2026-05-11\",\n  \"currency\": \"AED\",\n  \"items\": [\n  ",
+      "ok_fields": 13,
+      "total_fields": 13,
+      "gold": {
+        "vendor": "Gupta Enterprises",
+        "po_number": "4500178463",
+        "grn_number": "5000592296",
+        "invoice_number": "INV-2026-30232",
+        "invoice_date": "2026-05-11",
+        "currency": "AED",
+        "items": [
+          {
+            "material": "RAM-16GB",
+            "po_qty": 14,
+            "grn_qty": 14,
+            "inv_qty": 18,
+            "po_unit_price": 69550.0,
+            "inv_unit_price": 69550.0
+          }
+        ],
+        "total_amount": 1251900.0
+      }
+    },
+    {
+      "case": 92,
+      "edges": "clean",
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Verma Supplies Co\",\n  \"po_number\": \"4500432043\",\n  \"grn_number\": \"5000757246\",\n  \"invoice_number\": \"INV-2026-59808\",\n  \"invoice_date\": \"2026-12-25\",\n  \"currency\": \"EUR\",\n  \"items\": [\n  ",
+      "ok_fields": 13,
+      "total_fields": 13,
+      "gold": {
+        "vendor": "Verma Supplies Co",
+        "po_number": "4500432043",
+        "grn_number": "5000757246",
+        "invoice_number": "INV-2026-59808",
+        "invoice_date": "2026-12-25",
+        "currency": "EUR",
+        "items": [
+          {
+            "material": "CHAIR-ERGO",
+            "po_qty": 2,
+            "grn_qty": 2,
+            "inv_qty": 2,
+            "po_unit_price": 24500.0,
+            "inv_unit_price": 24500.0
+          }
+        ],
+        "total_amount": 49000.0
+      }
+    }
+  ]
+}
